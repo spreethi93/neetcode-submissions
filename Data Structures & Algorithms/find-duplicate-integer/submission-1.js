@@ -1,0 +1,16 @@
+class Solution {
+    /**
+     * @param {number[]} nums
+     * @return {number}
+     */
+    findDuplicate(nums) {
+        for(let n of nums) {
+            let idx = n - 1;
+            if(nums[idx] < 0) {
+                return n;
+            }
+            nums[idx] *= -1;
+        }
+        return -1;
+    }
+}
